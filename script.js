@@ -1,13 +1,26 @@
-// Animation au chargement de la page
+// Fonction principale qui initialise tout lorsque le DOM est chargé
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".bento-card");
+  // Initialise toutes les fonctions
+  setupAnimations();
+  setupContactForm();
+  setupProjectHover();
+  setupThemeSwitch();
+  setupScrollAnimations();
 
+  // À décommenter si vous ajoutez des filtres de projet
+  // setupProjectFilters();
+});
+
+function setupAnimations() {
+  // Animation des cartes au chargement
+  const cards = document.querySelectorAll(".bento-card");
   cards.forEach((card, index) => {
-    // Délai d'animation différent pour chaque carte
     card.style.animationDelay = `${index * 0.1}s`;
     card.classList.add("fade-in");
   });
+}
 
+function setupContactForm() {
   // Gestion du formulaire de contact
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
@@ -19,7 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
       contactForm.reset();
     });
   }
+}
 
+function setupProjectHover() {
   // Animation au survol des projets
   const projectCards = document.querySelectorAll(".project-card");
   projectCards.forEach((card) => {
@@ -30,38 +45,61 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.boxShadow = "none";
     });
   });
-});
-
-// Gestion du dark mode
-const toggleSwitch = document.querySelector(
-  '.theme-switch input[type="checkbox"]'
-);
-const currentTheme = localStorage.getItem("theme");
-const themeText = document.getElementById("theme-text");
-
-if (currentTheme) {
-  document.documentElement.setAttribute("data-theme", currentTheme);
-
-  if (currentTheme === "dark") {
-    toggleSwitch.checked = true;
-    themeText.textContent = "Light Mode";
-  }
 }
 
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
-    themeText.textContent = "Light Mode";
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");
-    themeText.textContent = "Dark Mode";
+function setupThemeSwitch() {
+  // Gestion du dark mode
+  const toggleSwitch = document.querySelector(
+    '.theme-switch input[type="checkbox"]'
+  );
+  const currentTheme = localStorage.getItem("theme");
+  const themeText = document.getElementById("theme-text");
+
+  // Applique le thème avant que la page ne soit visible pour éviter le flash
+  if (currentTheme) {
+    document.documentElement.classList.add("no-transition");
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    if (currentTheme === "dark") {
+      toggleSwitch.checked = true;
+      themeText.textContent = "Light Mode";
+    }
+    // Retire la classe no-transition après un court délai
+    setTimeout(() => {
+      document.documentElement.classList.remove("no-transition");
+    }, 50);
   }
+
+  // Gestion du changement de thème
+  toggleSwitch.addEventListener("change", (e) => {
+    const isDark = e.target.checked;
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light"
+    );
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    themeText.textContent = isDark ? "Light Mode" : "Dark Mode";
+  });
 }
 
-toggleSwitch.addEventListener("change", switchTheme, false);
+function setupScrollAnimations() {
+  // Animation des cartes lors du défilement
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
+  document.querySelectorAll(".bento-card").forEach((card) => {
+    observer.observe(card);
+  });
+}
+
+// Fonction pour filtrer les projets (à utiliser avec des boutons de filtre)
 function setupProjectFilters() {
   const filterButtons = document.querySelectorAll(".filter-btn");
 
@@ -82,22 +120,5 @@ function filterProjects(tech) {
     } else {
       project.style.display = "none";
     }
-  });
-}
-
-function setupScrollAnimations() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  document.querySelectorAll(".bento-card").forEach((card) => {
-    observer.observe(card);
   });
 }

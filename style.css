@@ -1,19 +1,57 @@
-/* Reset et polices */
+/* ==================== */
+/* VARIABLES ET THEMES  */
+/* ==================== */
+:root {
+  /* Light mode par défaut */
+  --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --text-color: #333;
+  --heading-color: #2c3e50;
+  --accent-color: #3498db;
+  --accent-dark: #2980b9;
+  --skill-bg: rgba(52, 152, 219, 0.2);
+  --skill-color: #2980b9;
+  --project-card-bg: rgba(255, 255, 255, 0.5);
+  --shadow-color: rgba(31, 38, 135, 0.1);
+  --border-color: rgba(255, 255, 255, 0.18);
+}
+
+[data-theme="dark"] {
+  /* Dark mode */
+  --bg-color: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  --card-bg: rgba(30, 30, 60, 0.7);
+  --text-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --accent-color: #4fc3f7;
+  --accent-dark: #3da8d8;
+  --skill-bg: rgba(79, 195, 247, 0.2);
+  --skill-color: #4fc3f7;
+  --project-card-bg: rgba(30, 30, 60, 0.5);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== */
+/* RESET ET BASE        */
+/* ==================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
   padding: 20px;
-  color: #333;
+  transition: background 0.5s ease, color 0.3s ease;
 }
 
-/* Grille Bento */
+/* ==================== */
+/* LAYOUT PRINCIPAL     */
+/* ==================== */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -23,15 +61,26 @@ body {
   margin: 0 auto;
 }
 
-/* Style des cartes Bento */
+/* ==================== */
+/* COMPOSANTS           */
+/* ==================== */
+/* Cartes Bento */
 .bento-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
+  border: 1px solid var(--border-color);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out,
+    background 0.5s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.bento-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .bento-card:hover {
@@ -39,7 +88,11 @@ body {
   box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
 }
 
-/* Tailles spécifiques pour certaines cartes */
+.bento-card * {
+  transition: color 0.3s ease;
+}
+
+/* Tailles spécifiques */
 .card-large {
   grid-column: span 2;
   grid-row: span 2;
@@ -53,23 +106,7 @@ body {
   grid-column: span 2;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .bento-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card-large,
-  .card-tall,
-  .card-wide {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-}
-
-/* ... (styles précédents) ... */
-
-/* Styles spécifiques */
+/* En-tête */
 .header-content {
   display: flex;
   align-items: center;
@@ -82,10 +119,11 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid white;
+  border: 3px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Contact */
 .contact-info {
   margin-top: 15px;
 }
@@ -97,14 +135,32 @@ body {
   gap: 10px;
 }
 
+.contact-info a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+/* Typographie */
+h1,
+h2,
+h3 {
+  color: var(--heading-color);
+}
+
 h2 {
   margin-bottom: 15px;
-  color: #2c3e50;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Timeline */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -123,21 +179,23 @@ h2 {
   top: 5px;
   width: 10px;
   height: 10px;
-  background: #3498db;
+  background: var(--accent-color);
   border-radius: 50%;
 }
 
 .timeline-item h3 {
   margin-bottom: 5px;
-  color: #2980b9;
+  color: var(--accent-color);
 }
 
 .date {
   font-size: 0.9em;
-  color: #7f8c8d;
+  color: var(--text-color);
+  opacity: 0.8;
   margin-bottom: 5px;
 }
 
+/* Compétences */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -145,13 +203,15 @@ h2 {
 }
 
 .skill-tag {
-  background: rgba(52, 152, 219, 0.2);
-  color: #2980b9;
+  background: var(--skill-bg);
+  color: var(--skill-color);
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 0.8em;
+  transition: background 0.5s ease, color 0.3s ease;
 }
 
+/* Projets */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -159,27 +219,29 @@ h2 {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--project-card-bg);
   padding: 15px;
   border-radius: 10px;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .project-card:hover {
   transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
   font-size: 1.1em;
   margin-bottom: 5px;
-  color: #2980b9;
+  color: var(--accent-color);
 }
 
 .project-card p {
   font-size: 0.9em;
-  color: #555;
+  opacity: 0.8;
 }
 
+/* Formulaire */
 #contact-form {
   display: flex;
   flex-direction: column;
@@ -189,9 +251,11 @@ h2 {
 #contact-form input,
 #contact-form textarea {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--card-bg);
+  color: var(--text-color);
+  transition: border-color 0.3s;
 }
 
 #contact-form textarea {
@@ -200,7 +264,7 @@ h2 {
 }
 
 #contact-form button {
-  background: #3498db;
+  background: var(--accent-color);
   color: white;
   border: none;
   padding: 10px;
@@ -210,103 +274,10 @@ h2 {
 }
 
 #contact-form button:hover {
-  background: #2980b9;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.contact-info a {
-  color: #2980b9;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-info a:hover {
-  color: #1a5276;
-  text-decoration: underline;
-}
-
-:root {
-  /* Light mode colors */
-  --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --text-color: #333;
-  --heading-color: #2c3e50;
-  --accent-color: #3498db;
-  --accent-dark: #2980b9;
-  --skill-bg: rgba(52, 152, 219, 0.2);
-  --skill-color: #2980b9;
-  --project-card-bg: rgba(255, 255, 255, 0.5);
-  --shadow-color: rgba(31, 38, 135, 0.1);
-}
-
-[data-theme="dark"] {
-  /* Dark mode colors */
-  --bg-color: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-  --card-bg: rgba(30, 30, 60, 0.7);
-  --text-color: #e0e0e0;
-  --heading-color: #ffffff;
-  --accent-color: #4fc3f7;
-  --accent-dark: #3da8d8;
-  --skill-bg: rgba(79, 195, 247, 0.2);
-  --skill-color: #4fc3f7;
-  --project-card-bg: rgba(30, 30, 60, 0.5);
-  --shadow-color: rgba(0, 0, 0, 0.3);
-}
-
-/* Mettez à jour les styles existants pour utiliser les variables */
-body {
-  background: var(--bg-color);
-  color: var(--text-color);
-}
-
-.bento-card {
-  background: var(--card-bg);
-  color: var(--text-color);
-  box-shadow: 0 8px 32px 0 var(--shadow-color);
-}
-
-h2 {
-  color: var(--heading-color);
-}
-
-.timeline-item h3 {
-  color: var(--accent-color);
-}
-
-.skill-tag {
-  background: var(--skill-bg);
-  color: var(--skill-color);
-}
-
-.project-card {
-  background: var(--project-card-bg);
-}
-
-#contact-form button {
-  background: var(--accent-color);
-}
-
-#contact-form button:hover {
   background: var(--accent-dark);
 }
 
-/* Style du toggle switch */
+/* Toggle Dark Mode */
 .theme-switch-wrapper {
   position: absolute;
   top: 20px;
@@ -314,6 +285,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 10px;
+  z-index: 10;
 }
 
 .theme-switch {
@@ -370,26 +342,60 @@ input:checked + .slider:before {
   color: var(--text-color);
 }
 
-body,
-.bento-card,
-.project-card,
-.skill-tag {
-  transition: background 0.5s ease, color 0.3s ease;
+/* ==================== */
+/* ANIMATIONS           */
+/* ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Assurez-vous que le texte dans les cartes transitionne aussi */
-.bento-card * {
-  transition: color 0.3s ease;
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Ajoutez dans style.css */
-.bento-card {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+/* ==================== */
+/* UTILITAIRES          */
+/* ==================== */
+.no-transition * {
+  transition: none !important;
 }
 
-.bento-card.in-view {
-  opacity: 1;
-  transform: translateY(0);
+/* ==================== */
+/* RESPONSIVE           */
+/* ==================== */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-large,
+  .card-tall,
+  .card-wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  .theme-switch-wrapper {
+    position: static;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 }

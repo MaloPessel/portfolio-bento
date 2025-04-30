@@ -9,18 +9,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
-      </label>
-      <span id="theme-text">Dark Mode</span>
-    </div>
   </head>
   <body>
-    <!-- ... (head et début du body comme précédemment) ... -->
 
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+        <span id="theme-text">Dark Mode</span>
+      </div>
     <div class="bento-grid">
+
       <!-- Carte 1: Header avec photo et contact -->
       <div class="bento-card card-large">
         <div class="header-content">
@@ -148,17 +148,17 @@
 
       <!-- Carte 7: Contact -->
       <div class="bento-card">
-        <form id="contact-form" netlify>
-        <h2><i class="fas fa-paper-plane"></i> Contact</h2>
-        <form id="contact-form" net>
-          <input type="text" placeholder="Votre nom" required />
-          <input type="email" placeholder="Votre email" required />
-          <textarea placeholder="Votre message" required></textarea>
-          <button type="submit">Envoyer</button>
+        <form id="contact-form" name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <h2><i class="fas fa-paper-plane"></i> Contact</h2>
+            
+            <input type="text" name="name" placeholder="Votre nom" required />
+            <input type="email" name="email" placeholder="Votre email" required />
+            <textarea name="message" placeholder="Votre message" required></textarea>
+            
+            <button type="submit">Envoyer</button>
         </form>
-      </div>
-    </form>
-    </div>
+        </div>
 
     <script src="script.js"></script>
   </body>
