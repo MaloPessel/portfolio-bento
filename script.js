@@ -61,3 +61,43 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener("change", switchTheme, false);
+
+function setupProjectFilters() {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tech = btn.dataset.tech;
+      filterProjects(tech);
+    });
+  });
+}
+
+function filterProjects(tech) {
+  const projects = document.querySelectorAll(".project-card");
+
+  projects.forEach((project) => {
+    if (tech === "all" || project.dataset.tech.includes(tech)) {
+      project.style.display = "block";
+    } else {
+      project.style.display = "none";
+    }
+  });
+}
+
+function setupScrollAnimations() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".bento-card").forEach((card) => {
+    observer.observe(card);
+  });
+}
