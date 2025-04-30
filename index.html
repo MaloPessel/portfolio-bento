@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Malo Pessel - Portfolio Développeur Full Stack</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+      <span id="theme-text">Dark Mode</span>
+    </div>
+  </head>
+  <body>
+    <!-- ... (head et début du body comme précédemment) ... -->
+
+    <div class="bento-grid">
+      <!-- Carte 1: Header avec photo et contact -->
+      <div class="bento-card card-large">
+        <div class="header-content">
+          <img
+            src="_photo.png"
+            alt="Photo de Malo Pessel"
+            class="profile-pic"
+          />
+          <div>
+            <h1>Malo Pessel</h1>
+            <p>Développeur Full Stack en recherche d'alternance</p>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> Les Ulis (91940)</p>
+              <p><i class="fas fa-phone"></i> 07.69.40.97.93</p>
+              <p><i class="fas fa-envelope"></i> malo.pessel@free.fr</p>
+              <p>
+                <i class="fab fa-linkedin"></i>
+                <a
+                  href="https://www.linkedin.com/in/malo-pessel-577474227"
+                  target="_blank"
+                  >Malo Pessel</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 2: À propos -->
+      <div class="bento-card">
+        <h2><i class="fas fa-user"></i> À propos</h2>
+        <p>
+          Étudiant en Mastère Lead Developer Full Stack, je recherche une
+          alternance de 2 ans à partir de septembre 2025.
+        </p>
+      </div>
+
+      <!-- Carte 3: Formations -->
+      <div class="bento-card card-tall">
+        <h2><i class="fas fa-graduation-cap"></i> Formations</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Mastère Lead Developer Full Stack</h3>
+            <p class="date">2025-2027 | ENSITECH (Montigny le Bretonneux)</p>
+            <p>Titre RNCP 36286 (niveau 7)</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Licence Informatique</h3>
+            <p class="date">2021-2025 | Université Paris-Saclay (Orsay)</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Baccalauréat</h3>
+            <p class="date">2021 | Lycée Nikola Tesla (Dourdan)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 4: Compétences -->
+      <div class="bento-card">
+        <h2><i class="fas fa-code"></i> Compétences</h2>
+        <div class="skills">
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">OCaml</span>
+          <span class="skill-tag">Développement Web</span>
+        </div>
+      </div>
+
+      <!-- Carte 5: Projets -->
+      <div class="bento-card card-wide">
+        <h2><i class="fas fa-project-diagram"></i> Projets</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Red Blue Dots</h3>
+            <p>Jeu de réflexion en Python inspiré de Super Mario 64</p>
+          </div>
+          <div class="project-card">
+            <h3>2048</h3>
+            <p>Implémentation du jeu 2048 en C++</p>
+          </div>
+          <div class="project-card">
+            <h3>Pendu</h3>
+            <p>Jeu de mots développé en OCaml</p>
+          </div>
+          <div class="project-card">
+            <h3>Maze in a Pyramid</h3>
+            <p>Projet en Processing avec shaders</p>
+          </div>
+          <div class="project-card">
+            <h3>Désert Interdit</h3>
+            <p>Jeu coopératif en Java</p>
+          </div>
+          <div class="project-card">
+            <h3>Sites Web</h3>
+            <p>Création de sites dynamiques avec HTML/CSS/JS</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 6: Expériences professionnelles -->
+      <div class="bento-card card-tall">
+        <h2><i class="fas fa-briefcase"></i> Expériences</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Vendeur Charcuterie/Fromagerie</h3>
+            <p class="date">Janvier 2024 - Aujourd'hui | Carrefour Les Ulis</p>
+            <p>Relation client, gestion des délais, rigueur</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Serveur/Commis de cuisine</h3>
+            <p class="date">Février 2023 - Janvier 2024 | La Guinguette</p>
+            <p>Sens relationnel, communication, détermination</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Équipier polyvalent</h3>
+            <p class="date">Mai 2021 - Février 2023 | McDonald's</p>
+            <p>Collaboration en équipe, maturité professionnelle</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 7: Contact -->
+      <div class="bento-card">
+        <h2><i class="fas fa-paper-plane"></i> Contact</h2>
+        <form id="contact-form">
+          <input type="text" placeholder="Votre nom" required />
+          <input type="email" placeholder="Votre email" required />
+          <textarea placeholder="Votre message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
