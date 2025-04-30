@@ -241,39 +241,42 @@ h2 {
   opacity: 0.8;
 }
 
-/* Formulaire */
-#contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* Style des formulaires */
+.form-group {
+  margin-bottom: 15px;
 }
 
-#contact-form input,
-#contact-form textarea {
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
   padding: 10px;
   border: 1px solid var(--border-color);
   border-radius: 5px;
   background: var(--card-bg);
   color: var(--text-color);
-  transition: border-color 0.3s;
 }
 
-#contact-form textarea {
-  min-height: 80px;
-  resize: vertical;
+.form-group textarea {
+  min-height: 100px;
 }
 
-#contact-form button {
+button[type="submit"] {
   background: var(--accent-color);
   color: white;
+  padding: 10px 20px;
   border: none;
-  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
-#contact-form button:hover {
+button[type="submit"]:hover {
   background: var(--accent-dark);
 }
 
