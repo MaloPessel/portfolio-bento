@@ -1,86 +1,133 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <!-- Métadonnées de base -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Malo Pessel, développeur Full Stack en recherche d'alternance à partir de septembre 2025"
+    />
+    <meta
+      name="keywords"
+      content="développeur, alternance, full stack, portfolio, Malo Pessel"
+    />
+
+    <!-- Titre -->
     <title>Malo Pessel - Portfolio Développeur Full Stack</title>
+
+    <!-- Favicon (à ajouter ultérieurement) -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+
+    <!-- Feuilles de style -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
+
   <body>
-
+    <!-- Switch Thème -->
     <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-          <input type="checkbox" id="checkbox" />
-          <div class="slider round"></div>
-        </label>
-        <span id="theme-text">Dark Mode</span>
-      </div>
-    <div class="bento-grid">
+      <label class="theme-switch" for="theme-toggle">
+        <input
+          type="checkbox"
+          id="theme-toggle"
+          aria-label="Basculer entre mode clair et sombre"
+        />
+        <div class="slider round"></div>
+      </label>
+      <span id="theme-text">Dark Mode</span>
+    </div>
 
-      <!-- Carte 1: Header avec photo et contact -->
-      <div class="bento-card card-large">
+    <!-- Contenu principal -->
+    <main class="bento-grid">
+      <!-- Section 1: En-tête -->
+      <section class="bento-card card-large" aria-labelledby="header-title">
         <div class="header-content">
           <img
             src="_photo.png"
-            alt="Photo de Malo Pessel"
+            alt="Photo de profil de Malo Pessel"
             class="profile-pic"
+            width="150"
+            height="150"
+            loading="lazy"
           />
           <div>
-            <h1>Malo Pessel</h1>
-            <p>Développeur Full Stack en recherche d'alternance</p>
+            <h1 id="header-title">Malo Pessel</h1>
+            <p class="subtitle">
+              Développeur Full Stack en recherche d'alternance
+            </p>
+
             <div class="contact-info">
-              <p><i class="fas fa-map-marker-alt"></i> Les Ulis (91940)</p>
-              <p><i class="fas fa-phone"></i> 07.69.40.97.93</p>
-              <p><i class="fas fa-envelope"></i> malo.pessel@free.fr</p>
               <p>
-                <i class="fab fa-linkedin"></i>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Les
+                Ulis (91940)
+              </p>
+              <p>
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <a href="tel:+33669409793">07.69.40.97.93</a>
+              </p>
+              <p>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:malo.pessel@free.fr">malo.pessel@free.fr</a>
+              </p>
+              <p>
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
                 <a
                   href="https://www.linkedin.com/in/malo-pessel-577474227"
                   target="_blank"
-                  >Malo Pessel</a
+                  rel="noopener noreferrer"
                 >
+                  Malo Pessel
+                </a>
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Carte 2: À propos -->
-      <div class="bento-card">
-        <h2><i class="fas fa-user"></i> À propos</h2>
+      <!-- Section 2: À propos -->
+      <section class="bento-card" aria-labelledby="about-title">
+        <h2 id="about-title">
+          <i class="fas fa-user" aria-hidden="true"></i> À propos
+        </h2>
         <p>
           Étudiant en Mastère Lead Developer Full Stack, je recherche une
           alternance de 2 ans à partir de septembre 2025.
         </p>
-      </div>
+      </section>
 
-      <!-- Carte 3: Formations -->
-      <div class="bento-card card-tall">
-        <h2><i class="fas fa-graduation-cap"></i> Formations</h2>
+      <!-- Section 3: Formations -->
+      <section class="bento-card card-tall" aria-labelledby="education-title">
+        <h2 id="education-title">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i> Formations
+        </h2>
         <div class="timeline">
-          <div class="timeline-item">
+          <article class="timeline-item">
             <h3>Mastère Lead Developer Full Stack</h3>
             <p class="date">2025-2027 | ENSITECH (Montigny le Bretonneux)</p>
             <p>Titre RNCP 36286 (niveau 7)</p>
-          </div>
-          <div class="timeline-item">
+          </article>
+
+          <article class="timeline-item">
             <h3>Licence Informatique</h3>
             <p class="date">2021-2025 | Université Paris-Saclay (Orsay)</p>
-          </div>
-          <div class="timeline-item">
+          </article>
+
+          <article class="timeline-item">
             <h3>Baccalauréat</h3>
             <p class="date">2021 | Lycée Nikola Tesla (Dourdan)</p>
-          </div>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <!-- Carte 4: Compétences -->
-      <div class="bento-card">
-        <h2><i class="fas fa-code"></i> Compétences</h2>
+      <!-- Section 4: Compétences -->
+      <section class="bento-card" aria-labelledby="skills-title">
+        <h2 id="skills-title">
+          <i class="fas fa-code" aria-hidden="true"></i> Compétences
+        </h2>
         <div class="skills">
           <span class="skill-tag">HTML/CSS</span>
           <span class="skill-tag">JavaScript</span>
@@ -91,75 +138,116 @@
           <span class="skill-tag">OCaml</span>
           <span class="skill-tag">Développement Web</span>
         </div>
-      </div>
+      </section>
 
-      <!-- Carte 5: Projets -->
-      <div class="bento-card card-wide">
-        <h2><i class="fas fa-project-diagram"></i> Projets</h2>
+      <!-- Section 5: Projets -->
+      <section class="bento-card card-wide" aria-labelledby="projects-title">
+        <h2 id="projects-title">
+          <i class="fas fa-project-diagram" aria-hidden="true"></i> Projets
+        </h2>
         <div class="projects-grid">
-          <div class="project-card">
+          <article class="project-card">
             <h3>Red Blue Dots</h3>
             <p>Jeu de réflexion en Python inspiré de Super Mario 64</p>
-          </div>
-          <div class="project-card">
+          </article>
+
+          <article class="project-card">
             <h3>2048</h3>
             <p>Implémentation du jeu 2048 en C++</p>
-          </div>
-          <div class="project-card">
+          </article>
+
+          <article class="project-card">
             <h3>Pendu</h3>
             <p>Jeu de mots développé en OCaml</p>
-          </div>
-          <div class="project-card">
+          </article>
+
+          <article class="project-card">
             <h3>Maze in a Pyramid</h3>
             <p>Projet en Processing avec shaders</p>
-          </div>
-          <div class="project-card">
+          </article>
+
+          <article class="project-card">
             <h3>Désert Interdit</h3>
             <p>Jeu coopératif en Java</p>
-          </div>
-          <div class="project-card">
+          </article>
+
+          <article class="project-card">
             <h3>Sites Web</h3>
             <p>Création de sites dynamiques avec HTML/CSS/JS</p>
-          </div>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <!-- Carte 6: Expériences professionnelles -->
-      <div class="bento-card card-tall">
-        <h2><i class="fas fa-briefcase"></i> Expériences</h2>
+      <!-- Section 6: Expériences professionnelles -->
+      <section class="bento-card card-tall" aria-labelledby="experience-title">
+        <h2 id="experience-title">
+          <i class="fas fa-briefcase" aria-hidden="true"></i> Expériences
+        </h2>
         <div class="timeline">
-          <div class="timeline-item">
+          <article class="timeline-item">
             <h3>Vendeur Charcuterie/Fromagerie</h3>
             <p class="date">Janvier 2024 - Aujourd'hui | Carrefour Les Ulis</p>
             <p>Relation client, gestion des délais, rigueur</p>
-          </div>
-          <div class="timeline-item">
+          </article>
+
+          <article class="timeline-item">
             <h3>Serveur/Commis de cuisine</h3>
             <p class="date">Février 2023 - Janvier 2024 | La Guinguette</p>
             <p>Sens relationnel, communication, détermination</p>
-          </div>
-          <div class="timeline-item">
+          </article>
+
+          <article class="timeline-item">
             <h3>Équipier polyvalent</h3>
             <p class="date">Mai 2021 - Février 2023 | McDonald's</p>
             <p>Collaboration en équipe, maturité professionnelle</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 7: Contact -->
+      <section class="bento-card" aria-labelledby="contact-title">
+        <h2 id="contact-title">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i> Contact
+        </h2>
+        <form id="contact-form" netlify>
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Votre nom"
+              required
+            />
           </div>
-        </div>
-      </div>
 
-      <!-- Carte 7: Contact -->
-      <div class="bento-card">
-        <form id="contact-form" name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact" />
-            <h2><i class="fas fa-paper-plane"></i> Contact</h2>
-            
-            <input type="text" name="name" placeholder="Votre nom" required />
-            <input type="email" name="email" placeholder="Votre email" required />
-            <textarea name="message" placeholder="Votre message" required></textarea>
-            
-            <button type="submit">Envoyer</button>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Votre email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Votre message"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">Envoyer</button>
         </form>
-        </div>
+      </section>
+    </main>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
   </body>
 </html>
