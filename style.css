@@ -269,6 +269,36 @@ h2 {
   opacity: 0.8;
 }
 
+/* Style des liens projets */
+.project-links {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.github-link:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.coming-soon {
+  font-size: 0.8em;
+  color: var(--text-color);
+  opacity: 0.7;
+  font-style: italic;
+}
+
 /* Style des formulaires */
 .form-group {
   margin-bottom: 15px;
