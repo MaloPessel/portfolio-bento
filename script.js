@@ -6,10 +6,63 @@ document.addEventListener("DOMContentLoaded", () => {
   setupProjectHover();
   setupThemeSwitch();
   setupScrollAnimations();
-
+  setupBentoGridInteractions();
   // À décommenter si vous ajoutez des filtres de projet
   // setupProjectFilters();
 });
+
+function setupBentoGridInteractions() {
+  const bentoCards = document.querySelectorAll(".bento-card");
+  const grid = document.querySelector(".bento-grid");
+
+  // Effet de propagation au chargement
+  setTimeout(() => {
+    grid.classList.add("grid-loaded");
+  }, 100);
+
+  // Effet de profondeur au hover
+  bentoCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      // Légère augmentation de la luminosité
+      card.style.filter = "brightness(1.05)";
+
+      // Animation subtile du contenu
+      const content = card.querySelector("h2, h3, p, .skills");
+      if (content) {
+        content.style.transform = "translateY(-2px)";
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.filter = "brightness(1)";
+      const content = card.querySelector("h2, h3, p, .skills");
+      if (content) {
+        content.style.transform = "translateY(0)";
+      }
+    });
+
+    // Effet de clic
+    card.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") return; // Ne pas interférer avec les liens
+
+      card.style.transform = "translateY(-5px) scale(0.98)";
+      setTimeout(() => {
+        card.style.transform = "";
+      }, 200);
+    });
+  });
+
+  // Effet parallaxe subtil au scroll
+  window.addEventListener("scroll", () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+
+    bentoCards.forEach((card, index) => {
+      const speed = 0.2 + index * 0.05;
+      card.style.transform = `translateY(${rate * speed}px)`;
+    });
+  });
+}
 
 function setupAnimations() {
   // Animation des cartes au chargement
