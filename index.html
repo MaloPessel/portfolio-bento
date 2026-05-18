@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Métadonnées de base -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio de Malo Pessel, développeur Full Stack en recherche d'alternance à partir de septembre 2025"
+      content="Portfolio de Malo Pessel, étudiant en Master IA & Big Data à la recherche d'une alternance Data"
     />
     <meta
       name="keywords"
-      content="développeur, alternance, full stack, portfolio, Malo Pessel"
+      content="développeur, alternance, data, IA, big data, portfolio, Malo Pessel"
     />
-
-    <!-- Titre -->
     <title>Portfolio Malo Pessel</title>
-
-    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-    <!-- Feuilles de style -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -43,6 +36,7 @@
 
     <!-- Contenu principal -->
     <main class="bento-grid">
+
       <!-- Section 1: En-tête -->
       <section class="bento-card card-large" aria-labelledby="header-title">
         <div class="header-content">
@@ -57,10 +51,9 @@
           <div>
             <h1 id="header-title">Malo Pessel</h1>
             <p class="subtitle">
-              Étudiant en Informatique à la recherche d'un stage
+              À la recherche d'une <strong>alternance en Data</strong> — 2 ans à partir de septembre 2026
             </p>
 
-            <!-- Bouton de téléchargement du CV -->
             <div class="cv-download">
               <a
                 href="_cv.pdf"
@@ -74,12 +67,11 @@
 
             <div class="contact-info">
               <p>
-                <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Les
-                Ulis (91940)
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Les Ulis (91940)
               </p>
               <p>
                 <i class="fas fa-phone" aria-hidden="true"></i>
-                <a href="tel:+33669409793">07.69.40.97.93</a>
+                <a href="tel:+33769409793">07.69.40.97.93</a>
               </p>
               <p>
                 <i class="fas fa-envelope" aria-hidden="true"></i>
@@ -106,8 +98,7 @@
           <i class="fas fa-user" aria-hidden="true"></i> À propos
         </h2>
         <p>
-          Étudiant en Licence Informatique, je recherche un stage de 6 mois à
-          partir de janvier 2026.
+          Étudiant en Licence Informatique à Paris-Saclay, je rejoins en septembre 2026 le Master <strong>Intelligence Artificielle & Big Data</strong> à l'ETNA. Je recherche une alternance de 2 ans dans la Data (Data Engineering / Data Science).
         </p>
       </section>
 
@@ -118,8 +109,15 @@
         </h2>
         <div class="timeline">
           <article class="timeline-item">
+            <h3>Master of Science — IA &amp; Big Data</h3>
+            <p class="date">Sept 2026 – Sept 2028 | ETNA, Ivry-sur-Seine</p>
+            <p>Data engineering, Big Data, machine learning, pipelines de données, architectures distribuées.</p>
+          </article>
+
+          <article class="timeline-item">
             <h3>Licence Informatique</h3>
-            <p class="date">2021-2026 | Université Paris-Saclay (Orsay)</p>
+            <p class="date">2021 – 2026 | Université Paris-Saclay (Orsay)</p>
+            <p>Algorithmique, bases de données, data science &amp; ML (fondements), sécurité informatique.</p>
           </article>
 
           <article class="timeline-item">
@@ -134,15 +132,27 @@
         <h2 id="skills-title">
           <i class="fas fa-code" aria-hidden="true"></i> Compétences
         </h2>
+        <p class="skills-category">Programmation</p>
         <div class="skills">
-          <span class="skill-tag">HTML/CSS</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">PHP</span>
           <span class="skill-tag">Python</span>
           <span class="skill-tag">Java</span>
           <span class="skill-tag">C++</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML/CSS</span>
           <span class="skill-tag">OCaml</span>
-          <span class="skill-tag">C#</span>
+        </div>
+        <p class="skills-category">Data &amp; BDD</p>
+        <div class="skills">
+          <span class="skill-tag skill-tag--data">BigQuery</span>
+          <span class="skill-tag skill-tag--data">Talend</span>
+          <span class="skill-tag skill-tag--data">SQL</span>
+          <span class="skill-tag skill-tag--data">Pipelines de données</span>
+        </div>
+        <p class="skills-category">Environnement</p>
+        <div class="skills">
+          <span class="skill-tag skill-tag--env">Git</span>
+          <span class="skill-tag skill-tag--env">Linux</span>
+          <span class="skill-tag skill-tag--env">IntelliJ / VS Code</span>
         </div>
       </section>
 
@@ -153,68 +163,9 @@
         </h2>
         <div class="projects-grid">
           <article class="project-card">
-            <h3>Red Blue Dots</h3>
-            <p>Jeu de réflexion en Python inspiré de Super Mario 64</p>
-            <div class="project-links">
-              <a
-                href="https://github.com/MaloPessel/red-blue-dots"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="github-link"
-              >
-                <i class="fab fa-github"></i> Code source
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <h3>2048</h3>
-            <p>Implémentation du jeu 2048 en C++</p>
-            <div class="project-links">
-              <a
-                href="https://github.com/MaloPessel/Projet-2048"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="github-link"
-              >
-                <i class="fab fa-github"></i> Code source
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <h3>Pendu</h3>
-            <p>Jeu de mots développé en OCaml</p>
-            <div class="project-links">
-              <a
-                href="https://github.com/MaloPessel/pendu"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="github-link"
-              >
-                <i class="fab fa-github"></i> Code source
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <h3>Do Not Fall</h3>
-            <p>Jeu de plateau en Python</p>
-            <div class="project-links">
-              <a
-                href="https://github.com/MaloPessel/do-not-fall"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="github-link"
-              >
-                <i class="fab fa-github"></i> Code source
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
             <h3>Deep Ocean</h3>
-            <p>Jeu RTS (Stratégie en Temps Réel) en Java</p>
+            <p>Jeu RTS (Stratégie en Temps Réel) en Java avec gestion de la concurrence et interfaces graphiques.</p>
+            <p class="project-tech">Java · JavaFX · Threads</p>
             <div class="project-links">
               <a
                 href="https://github.com/MaloPessel/deep-ocean"
@@ -228,11 +179,12 @@
           </article>
 
           <article class="project-card">
-            <h3>Let You Cook</h3>
-            <p>Création d'un site de cuisine en PHP/JSON/HTML/CSS/JS</p>
+            <h3>2048</h3>
+            <p>Implémentation complète du jeu 2048 avec logique algorithmique et gestion des états.</p>
+            <p class="project-tech">C++ · STL · Tests unitaires</p>
             <div class="project-links">
               <a
-                href="https://github.com/MaloPessel/let-you-cook"
+                href="https://github.com/MaloPessel/Projet-2048"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="github-link"
@@ -243,16 +195,17 @@
           </article>
 
           <article class="project-card">
-            <h3>Aménage ta cuisine</h3>
-            <p>Création d'une application pour aménager une cuisine en C#</p>
+            <h3>Sites Web</h3>
+            <p>Création de plusieurs sites dynamiques avec accent sur l'expérience utilisateur et le responsive design.</p>
+            <p class="project-tech">HTML · CSS · JavaScript</p>
             <div class="project-links">
               <a
-                href="https://github.com/MaloPessel/amenage-cuisine"
+                href="https://github.com/MaloPessel"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="github-link"
               >
-                <i class="fab fa-github"></i> Code source
+                <i class="fab fa-github"></i> GitHub
               </a>
             </div>
           </article>
@@ -266,21 +219,15 @@
         </h2>
         <div class="timeline">
           <article class="timeline-item">
-            <h3>Vendeur Charcuterie/Fromagerie</h3>
-            <p class="date">Janvier 2024 - Aujourd'hui | Carrefour Les Ulis</p>
-            <p>Relation client, gestion des délais, rigueur</p>
+            <h3>Stagiaire — Data Scientist / Data Engineer</h3>
+            <p class="date">Janv 2026 – Juin 2026 | Polynom, Rueil-Malmaison</p>
+            <p>Analyse et traitement de données dans des pipelines data, amélioration de la qualité des données (typage, déduplication), investigation de jobs BigQuery / Python / Talend.</p>
           </article>
 
           <article class="timeline-item">
-            <h3>Serveur/Commis de cuisine</h3>
-            <p class="date">Février 2023 - Janvier 2024 | La Guinguette</p>
-            <p>Sens relationnel, communication, détermination</p>
-          </article>
-
-          <article class="timeline-item">
-            <h3>Équipier polyvalent</h3>
-            <p class="date">Mai 2021 - Février 2023 | McDonald's</p>
-            <p>Collaboration en équipe, maturité professionnelle</p>
+            <h3>Vendeur Charcuterie / Fromagerie</h3>
+            <p class="date">Janv 2024 – Déc 2025 | Carrefour Les Ulis</p>
+            <p>Relation client, gestion des stocks, rigueur et respect des normes d'hygiène.</p>
           </article>
         </div>
       </section>
@@ -291,8 +238,9 @@
           <i class="fas fa-language" aria-hidden="true"></i> Langues
         </h2>
         <div class="languages-list">
-          <p>🇫🇷 Français - Langue maternelle</p>
-          <p>🇬🇧 Anglais - Intermédiaire (B1)</p>
+          <p>🇫🇷 Français — Langue maternelle</p>
+          <p>🇬🇧 Anglais — Courant (C1)</p>
+          <p>🇪🇸 Espagnol — Niveau scolaire</p>
         </div>
       </section>
 
@@ -318,9 +266,29 @@
         </form>
       </section>
 
-      
+      <!-- Section 9: Centres d'intérêt -->
+      <section class="bento-card card-interests" aria-labelledby="interests-title">
+        <h2 id="interests-title">
+          <i class="fas fa-heart" aria-hidden="true"></i> Centres d'intérêt
+        </h2>
+        <div class="interests-list">
+          <div class="interest-item">
+            <span class="interest-icon">🏉</span>
+            <span>Rugby en club — 7 ans de pratique</span>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">🎮</span>
+            <span>Jeux vidéo</span>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">🎵</span>
+            <span>Musique</span>
+          </div>
+        </div>
+      </section>
 
-    <!-- Scripts -->
+    </main>
+
     <script src="script.js" defer></script>
   </body>
 </html>
