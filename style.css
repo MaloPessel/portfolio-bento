@@ -360,29 +360,90 @@ h2 {
   text-decoration: underline;
 }
 
-/* Langues */
-.languages-list p {
-  margin: 8px 0;
-  font-size: 0.95em;
-}
-
-/* Centres d'intérêt */
-.interests-list {
+/* Langues avec barres */
+.languages-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 5px;
+  gap: 14px;
+}
+
+.lang-item {}
+
+.lang-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.lang-name {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.lang-level {
+  font-size: 0.8em;
+  opacity: 0.65;
+}
+
+.lang-bar {
+  height: 5px;
+  background: rgba(52, 152, 219, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.lang-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent-color);
+  transition: width 1s ease;
+}
+
+.lang-fill--low {
+  background: var(--accent-dark);
+  opacity: 0.5;
+}
+
+/* Centres d'intérêt horizontaux */
+.interests-list {
+  display: flex;
+  gap: 12px;
 }
 
 .interest-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.95em;
+  flex: 1;
+  background: var(--skill-bg);
+  border-radius: 12px;
+  padding: 10px 12px;
 }
 
-.interest-icon {
-  font-size: 1.3em;
+.interest-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--skill-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+.interest-label {
+  display: block;
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.interest-sub {
+  display: block;
+  font-size: 0.78em;
+  opacity: 0.6;
 }
 
 /* Formulaire */
