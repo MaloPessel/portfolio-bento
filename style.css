@@ -2,7 +2,6 @@
 /* VARIABLES ET THEMES  */
 /* ==================== */
 :root {
-  /* Light mode par défaut */
   --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --card-bg: rgba(255, 255, 255, 0.7);
   --text-color: #333;
@@ -11,13 +10,16 @@
   --accent-dark: #2980b9;
   --skill-bg: rgba(52, 152, 219, 0.2);
   --skill-color: #2980b9;
+  --skill-data-bg: rgba(46, 204, 113, 0.18);
+  --skill-data-color: #27ae60;
+  --skill-env-bg: rgba(155, 89, 182, 0.18);
+  --skill-env-color: #8e44ad;
   --project-card-bg: rgba(255, 255, 255, 0.5);
   --shadow-color: rgba(31, 38, 135, 0.1);
   --border-color: rgba(255, 255, 255, 0.18);
 }
 
 [data-theme="dark"] {
-  /* Dark mode */
   --bg-color: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   --card-bg: rgba(30, 30, 60, 0.7);
   --text-color: #e0e0e0;
@@ -26,6 +28,10 @@
   --accent-dark: #3da8d8;
   --skill-bg: rgba(79, 195, 247, 0.2);
   --skill-color: #4fc3f7;
+  --skill-data-bg: rgba(46, 204, 113, 0.2);
+  --skill-data-color: #2ecc71;
+  --skill-env-bg: rgba(187, 143, 206, 0.2);
+  --skill-env-color: #bb8fce;
   --project-card-bg: rgba(30, 30, 60, 0.5);
   --shadow-color: rgba(0, 0, 0, 0.3);
   --border-color: rgba(0, 0, 0, 0.3);
@@ -50,7 +56,7 @@ body {
 }
 
 /* ==================== */
-/* LAYOUT BENTO PERFECTIONNÉ */
+/* LAYOUT BENTO         */
 /* ==================== */
 .bento-grid {
   display: grid;
@@ -62,7 +68,6 @@ body {
   padding: 20px;
 }
 
-/* Configuration des tailles de cartes */
 .bento-card {
   background: var(--card-bg);
   backdrop-filter: blur(20px);
@@ -80,7 +85,6 @@ body {
   overflow: hidden;
 }
 
-/* Effet de brillance subtile */
 .bento-card::before {
   content: "";
   position: absolute;
@@ -88,16 +92,10 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   z-index: 1;
 }
 
-/* États */
 .bento-card.in-view {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -106,117 +104,53 @@ body {
 .bento-card:hover {
   transform: translateY(-8px) scale(1.01);
   box-shadow: 0 20px 40px 0 var(--shadow-color),
-    0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 2px 0 0 rgba(255, 255, 255, 0.2);
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 2px 0 0 rgba(255, 255, 255, 0.2);
 }
 
-/* Tailles spécifiques avec positions précises */
-.card-large {
-  grid-column: span 6;
-  grid-row: span 3;
-}
-
-.card-tall {
-  grid-column: span 3;
-  grid-row: span 4;
-}
-
-.card-wide {
-  grid-column: span 9;
-  grid-row: span 2;
-}
-
-.card-small {
-  grid-column: span 3;
-  grid-row: span 2;
-}
-
-.card-medium {
-  grid-column: span 4;
-  grid-row: span 2;
-}
-
-/* Positions spécifiques pour un layout organique */
-/* En-tête */
-.bento-card:first-child {
-  grid-column: 1 / span 7;
-  grid-row: 1 / span 3;
-}
-
-/* À propos */
-.bento-card:nth-child(2) {
-  grid-column: 8 / span 5;
-  grid-row: 1 / span 1;
-}
-
-/* Formations */
-.bento-card:nth-child(3) {
-  grid-column: 8 / span 5;
-  grid-row: 2 / span 2;
-}
-
-/* Compétences */
-.bento-card:nth-child(4) {
-  grid-column: 1 / span 3;
-  grid-row: 4 / span 2;
-}
-
-/* Projets */
-.bento-card:nth-child(5) {
-  grid-column: 4 / span 9;
-  grid-row: 4 / span 2;
-}
-
-/* Expériences */
-.bento-card:nth-child(6) {
-  grid-column: 1 / span 7;
-  grid-row: 6 / span 3;
-}
-
-/* Langues */
-.bento-card:nth-child(7) {
-  grid-column: 8 / span 5;
-  grid-row: 6 / span 1;
-}
-
-/* Contact */
-.bento-card:nth-child(8) {
-  grid-column: 8 / span 5;
-  grid-row: 7 / span 2;
-}
-
-/* Animation de remplissage */
 .bento-card::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
   pointer-events: none;
 }
 
-.bento-card:hover::after {
-  opacity: 1;
-}
+.bento-card:hover::after { opacity: 1; }
+.bento-card > * { position: relative; z-index: 2; }
+.bento-card { z-index: 1; }
+.bento-card:hover { z-index: 10; }
+.bento-grid:hover .bento-card:not(:hover) { opacity: 0.9; transform: scale(0.99); }
 
-/* Contenu par-dessus l'effet */
-.bento-card > * {
-  position: relative;
-  z-index: 2;
-}
+/* ==================== */
+/* POSITIONS BENTO      */
+/* ==================== */
+/* En-tête */
+.bento-card:nth-child(1) { grid-column: 1 / span 7; grid-row: 1 / span 3; }
+/* À propos */
+.bento-card:nth-child(2) { grid-column: 8 / span 5; grid-row: 1 / span 1; }
+/* Formations */
+.bento-card:nth-child(3) { grid-column: 8 / span 5; grid-row: 2 / span 2; }
+/* Compétences */
+.bento-card:nth-child(4) { grid-column: 1 / span 4; grid-row: 4 / span 3; }
+/* Projets */
+.bento-card:nth-child(5) { grid-column: 5 / span 8; grid-row: 4 / span 2; }
+/* Expériences */
+.bento-card:nth-child(6) { grid-column: 1 / span 7; grid-row: 7 / span 3; }
+/* Langues */
+.bento-card:nth-child(7) { grid-column: 8 / span 5; grid-row: 6 / span 1; }
+/* Contact */
+.bento-card:nth-child(8) { grid-column: 8 / span 5; grid-row: 7 / span 2; }
+/* Centres d'intérêt */
+.bento-card:nth-child(9) { grid-column: 5 / span 4; grid-row: 6 / span 1; }
 
 /* ==================== */
 /* COMPOSANTS           */
 /* ==================== */
-/* Style pour le bouton de téléchargement */
 .cv-download {
   margin: 15px 0;
 }
@@ -233,9 +167,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.download-btn:hover {
-  background-color: var(--accent-dark);
-}
+.download-btn:hover { background-color: var(--accent-dark); }
 
 .file-size {
   font-size: 0.8em;
@@ -244,7 +176,6 @@ body {
   margin-left: 10px;
 }
 
-/* En-tête */
 .header-content {
   display: flex;
   align-items: center;
@@ -261,10 +192,17 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Contact */
-.contact-info {
-  margin-top: 15px;
+.subtitle {
+  margin-top: 6px;
+  font-size: 0.95em;
+  line-height: 1.4;
 }
+
+.subtitle strong {
+  color: var(--accent-color);
+}
+
+.contact-info { margin-top: 15px; }
 
 .contact-info p {
   margin: 5px 0;
@@ -284,12 +222,7 @@ body {
   text-decoration: underline;
 }
 
-/* Typographie */
-h1,
-h2,
-h3 {
-  color: var(--heading-color);
-}
+h1, h2, h3 { color: var(--heading-color); }
 
 h2 {
   margin-bottom: 15px;
@@ -298,7 +231,6 @@ h2 {
   gap: 10px;
 }
 
-/* Timeline */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -313,10 +245,8 @@ h2 {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 5px;
-  width: 10px;
-  height: 10px;
+  left: 0; top: 5px;
+  width: 10px; height: 10px;
   background: var(--accent-color);
   border-radius: 50%;
 }
@@ -333,11 +263,23 @@ h2 {
   margin-bottom: 5px;
 }
 
-/* Compétences */
+/* Compétences par catégorie */
+.skills-category {
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
+  margin: 12px 0 6px;
+}
+
+.skills-category:first-of-type { margin-top: 0; }
+
 .skills {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 4px;
 }
 
 .skill-tag {
@@ -347,6 +289,16 @@ h2 {
   border-radius: 20px;
   font-size: 0.8em;
   transition: background 0.5s ease, color 0.3s ease;
+}
+
+.skill-tag--data {
+  background: var(--skill-data-bg);
+  color: var(--skill-data-color);
+}
+
+.skill-tag--env {
+  background: var(--skill-env-bg);
+  color: var(--skill-env-color);
 }
 
 /* Projets */
@@ -379,7 +331,13 @@ h2 {
   opacity: 0.8;
 }
 
-/* Style des liens projets */
+.project-tech {
+  font-size: 0.78em !important;
+  opacity: 0.55 !important;
+  margin-top: 6px;
+  font-style: italic;
+}
+
 .project-links {
   margin-top: 10px;
   display: flex;
@@ -402,10 +360,33 @@ h2 {
   text-decoration: underline;
 }
 
-/* Style des formulaires */
-.form-group {
-  margin-bottom: 15px;
+/* Langues */
+.languages-list p {
+  margin: 8px 0;
+  font-size: 0.95em;
 }
+
+/* Centres d'intérêt */
+.interests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.interest-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95em;
+}
+
+.interest-icon {
+  font-size: 1.3em;
+}
+
+/* Formulaire */
+.form-group { margin-bottom: 15px; }
 
 .form-group label {
   display: block;
@@ -423,9 +404,7 @@ h2 {
   color: var(--text-color);
 }
 
-.form-group textarea {
-  min-height: 100px;
-}
+.form-group textarea { min-height: 100px; }
 
 button[type="submit"] {
   background: var(--accent-color);
@@ -437,65 +416,37 @@ button[type="submit"] {
   transition: background 0.3s;
 }
 
-button[type="submit"]:hover {
-  background: var(--accent-dark);
-}
+button[type="submit"]:hover { background: var(--accent-dark); }
 
 /* ==================== */
-/* ANIMATIONS AMÉLIORÉES */
+/* ANIMATIONS           */
 /* ==================== */
 @keyframes floatIn {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.96);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-5px) scale(1.01);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  0%   { opacity: 0; transform: translateY(40px) scale(0.96); }
+  60%  { opacity: 1; transform: translateY(-5px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .fade-in {
   animation: floatIn 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
-/* Effet de propagation */
-.bento-grid .bento-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.bento-grid .bento-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.bento-grid .bento-card:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.bento-grid .bento-card:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.bento-grid .bento-card:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.bento-grid .bento-card:nth-child(6) {
-  animation-delay: 0.6s;
-}
-.bento-grid .bento-card:nth-child(7) {
-  animation-delay: 0.7s;
-}
-.bento-grid .bento-card:nth-child(8) {
-  animation-delay: 0.8s;
-}
+.bento-grid .bento-card:nth-child(1) { animation-delay: 0.1s; }
+.bento-grid .bento-card:nth-child(2) { animation-delay: 0.2s; }
+.bento-grid .bento-card:nth-child(3) { animation-delay: 0.3s; }
+.bento-grid .bento-card:nth-child(4) { animation-delay: 0.4s; }
+.bento-grid .bento-card:nth-child(5) { animation-delay: 0.5s; }
+.bento-grid .bento-card:nth-child(6) { animation-delay: 0.6s; }
+.bento-grid .bento-card:nth-child(7) { animation-delay: 0.7s; }
+.bento-grid .bento-card:nth-child(8) { animation-delay: 0.8s; }
+.bento-grid .bento-card:nth-child(9) { animation-delay: 0.9s; }
 
 /* ==================== */
-/* Toggle Dark Mode */
+/* DARK MODE TOGGLE     */
 /* ==================== */
 .theme-switch-wrapper {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 20px; right: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -509,72 +460,46 @@ button[type="submit"]:hover {
   width: 50px;
 }
 
-.theme-switch input {
-  display: none;
-}
+.theme-switch input { display: none; }
 
 .slider {
   background-color: #ccc;
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+  bottom: 0; cursor: pointer;
+  left: 0; position: absolute;
+  right: 0; top: 0;
   transition: 0.4s;
 }
 
 .slider:before {
   background-color: #fff;
-  bottom: 4px;
-  content: "";
-  height: 16px;
-  left: 4px;
-  position: absolute;
-  transition: 0.4s;
+  bottom: 4px; content: "";
+  height: 16px; left: 4px;
+  position: absolute; transition: 0.4s;
   width: 16px;
 }
 
-input:checked + .slider {
-  background-color: var(--accent-color);
-}
+input:checked + .slider { background-color: var(--accent-color); }
+input:checked + .slider:before { transform: translateX(26px); }
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
 
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-#theme-text {
-  font-size: 0.9em;
-  color: var(--text-color);
-}
+#theme-text { font-size: 0.9em; color: var(--text-color); }
 
 /* ==================== */
 /* UTILITAIRES          */
 /* ==================== */
-.no-transition * {
-  transition: none !important;
-}
+.no-transition * { transition: none !important; }
 
 .hidden {
   display: none !important;
   visibility: hidden !important;
-  height: 0 !important;
-  width: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  height: 0 !important; width: 0 !important;
+  padding: 0 !important; margin: 0 !important;
   opacity: 0 !important;
 }
 
 /* ==================== */
-/* RESPONSIVE AMÉLIORÉ */
+/* RESPONSIVE           */
 /* ==================== */
 @media (max-width: 1200px) {
   .bento-grid {
@@ -588,9 +513,7 @@ input:checked + .slider:before {
     min-height: 200px;
   }
 
-  .card-large {
-    grid-row: span 2 !important;
-  }
+  .bento-card:nth-child(1) { grid-row: span 2 !important; }
 
   .header-content {
     flex-direction: column;
@@ -613,22 +536,13 @@ input:checked + .slider:before {
     min-height: auto;
   }
 
-  .card-tall,
-  .card-wide,
-  .card-large {
-    grid-row: span 1 !important;
-  }
-
   .theme-switch-wrapper {
     position: static;
     justify-content: center;
     margin-bottom: 20px;
   }
 
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-  }
+  .profile-pic { width: 120px; height: 120px; }
 }
 
 @media (max-width: 480px) {
@@ -637,28 +551,6 @@ input:checked + .slider:before {
     gap: 10px;
   }
 
-  .bento-card {
-    grid-column: 1 !important;
-    padding: 15px;
-  }
-
-  /* Reset les délais d'animation sur mobile */
-  .bento-grid .bento-card {
-    animation-delay: 0.1s !important;
-  }
-}
-
-/* Effet de profondeur avec z-index */
-.bento-card {
-  z-index: 1;
-}
-
-.bento-card:hover {
-  z-index: 10;
-}
-
-/* Transition plus douce pour les cartes contiguës */
-.bento-grid:hover .bento-card:not(:hover) {
-  opacity: 0.9;
-  transform: scale(0.99);
+  .bento-card { grid-column: 1 !important; padding: 15px; }
+  .bento-grid .bento-card { animation-delay: 0.1s !important; }
 }
