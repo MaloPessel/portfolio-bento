@@ -1,0 +1,171 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/archivo";
+@import "@fontsource-variable/jetbrains-mono";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: "Archivo Variable", system-ui, -apple-system, sans-serif;
+    --font-heading: var(--font-sans);
+    --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Code", monospace;
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --color-brand: var(--brand);
+    --color-ink-blue: var(--ink-blue);
+    --color-available: var(--available);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Palette : ambre profond + encre bleue sur blanc pur — un seul thème, clair.
+   Voir DESIGN.md pour les rôles. */
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.24 0.02 75);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.24 0.02 75);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.24 0.02 75);
+    --primary: oklch(0.46 0.1 65);
+    --primary-foreground: oklch(0.985 0.008 85);
+    --secondary: oklch(0.972 0.008 80);
+    --secondary-foreground: oklch(0.24 0.02 75);
+    --muted: oklch(0.972 0.008 80);
+    --muted-foreground: oklch(0.46 0.02 75);
+    --accent: oklch(0.955 0.032 85);
+    --accent-foreground: oklch(0.46 0.1 65);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.885 0.014 80);
+    --input: oklch(0.885 0.014 80);
+    --ring: oklch(0.42 0.09 260);
+    --brand: oklch(0.68 0.145 75);
+    --ink-blue: oklch(0.35 0.075 260);
+    --available: oklch(0.84 0.19 145);
+    --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    padding: clamp(16px, 3vw, 44px);
+    }
+  html {
+    @apply font-sans;
+    }
+}
+
+/* ---------- Grille bento ---------- */
+
+.bento {
+  display: grid;
+  gap: clamp(12px, 1.4vw, 18px);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "hero      hero      hero      hero       about      about"
+    "hero      hero      hero      hero       langs      langs"
+    "skills    skills    projects  projects   projects   projects"
+    "education education education experience experience experience"
+    "interests interests contact   contact    contact    contact";
+}
+
+/* Un contenu large ne doit jamais élargir la piste au-delà du viewport */
+.bento > * {
+  min-width: 0;
+}
+
+.a-hero       { grid-area: hero; }
+.a-about      { grid-area: about; }
+.a-langs      { grid-area: langs; }
+.a-skills     { grid-area: skills; }
+.a-projects   { grid-area: projects; }
+.a-education  { grid-area: education; }
+.a-experience { grid-area: experience; }
+.a-interests  { grid-area: interests; }
+.a-contact    { grid-area: contact; }
+
+@media (max-width: 980px) {
+  .bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hero      hero"
+      "about     about"
+      "skills    skills"
+      "projects  projects"
+      "education experience"
+      "langs     interests"
+      "contact   contact";
+  }
+}
+
+@media (max-width: 640px) {
+  .bento {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero"
+      "about"
+      "skills"
+      "projects"
+      "education"
+      "experience"
+      "langs"
+      "interests"
+      "contact";
+  }
+}
+
+/* ---------- Entrée en scène ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* backwards (pas both) : une fois l'animation finie, le transform
+     redevient libre pour le lift au hover */
+  .bento > * {
+    animation: rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+
+  .bento > *:nth-child(1) { animation-delay: 0.02s; }
+  .bento > *:nth-child(2) { animation-delay: 0.08s; }
+  .bento > *:nth-child(3) { animation-delay: 0.14s; }
+  .bento > *:nth-child(4) { animation-delay: 0.2s; }
+  .bento > *:nth-child(5) { animation-delay: 0.26s; }
+  .bento > *:nth-child(6) { animation-delay: 0.32s; }
+  .bento > *:nth-child(7) { animation-delay: 0.38s; }
+  .bento > *:nth-child(8) { animation-delay: 0.44s; }
+  .bento > *:nth-child(9) { animation-delay: 0.5s; }
+}
