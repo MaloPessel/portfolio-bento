@@ -6,11 +6,11 @@ brand
 
 ## Users
 
-Recruteurs, RH et tech leads data qui reçoivent une candidature d'alternance et ouvrent ce lien depuis un CV ou LinkedIn. Contexte : bureau, écran de travail, 30 à 60 secondes d'attention. Leur job : décider vite si Malo mérite un entretien. Visiteurs secondaires : enseignants et pairs.
+Contacts professionnels qui découvrent Malo via LinkedIn, GitHub ou son CV : collègues et managers chez Polynom, recruteurs pour l'après-alternance, enseignants et pairs. Contexte : bureau, écran de travail, 30 à 60 secondes d'attention. Leur job : comprendre vite qui est Malo et ce qu'il sait faire.
 
 ## Product Purpose
 
-Portfolio-CV une page de Malo Pessel, étudiant en informatique (Paris-Saclay) qui rejoint le Master IA & Big Data de l'ETNA. Objectif unique : décrocher une alternance Data (data engineering / data science) de 2 ans à partir de septembre 2026. Succès = le recruteur télécharge le CV ou envoie un mail.
+Portfolio-CV une page de Malo Pessel, étudiant en Master IA & Big Data (ETNA) et alternant Data chez Polynom (sept. 2026 – sept. 2028, dans la continuité de son stage). Le site est sa vitrine professionnelle : crédibilité, réseau, et opportunités pour la suite (embauche post-alternance). Succès = une prise de contact ou un téléchargement de CV.
 
 ## Brand Personality
 

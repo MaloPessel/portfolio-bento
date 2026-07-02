@@ -9,7 +9,7 @@ export const education: Step[] = [
     role: "Master of Science — IA & Big Data",
     when: "Sept. 2026 – sept. 2028 · ETNA, Ivry-sur-Seine",
     description:
-      "Data engineering, Big Data, machine learning, pipelines de données, architectures distribuées.",
+      "Data engineering, Big Data, machine learning, pipelines de données, architectures distribuées. En alternance chez Polynom.",
   },
   {
     role: "Licence Informatique",
@@ -20,6 +20,12 @@ export const education: Step[] = [
 ]
 
 export const experience: Step[] = [
+  {
+    role: "Alternant Data Engineer / Data Scientist",
+    when: "Sept. 2026 – sept. 2028 · Polynom, Rueil-Malmaison",
+    description:
+      "Alternance de 2 ans dans la continuité du stage, en parallèle du Master IA & Big Data : pipelines de données, qualité des données, BigQuery, Python, Talend.",
+  },
   {
     role: "Stagiaire Data Scientist / Data Engineer",
     when: "Janv. 2026 – juin 2026 · Polynom, Rueil-Malmaison",

@@ -38,8 +38,8 @@ export function Contact() {
             Discutons data.
           </h2>
           <p className="max-w-[40ch] text-[0.95rem] text-white/75">
-            Un poste d'alternant data engineer ou data scientist à
-            pourvoir&nbsp;? Je réponds vite.
+            Une question data, un projet, une opportunité&nbsp;? Je réponds
+            vite.
           </p>
         </div>
         <div className="flex flex-col items-start gap-3">

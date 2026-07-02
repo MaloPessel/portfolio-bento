@@ -27,7 +27,7 @@ export function Hero() {
               aria-hidden="true"
               className="size-2 shrink-0 rounded-full bg-available"
             />
-            Disponible — alternance dès sept. 2026
+            Alternant Data chez Polynom — dès sept. 2026
           </Badge>
         </div>
 
@@ -36,16 +36,16 @@ export function Hero() {
         </h1>
 
         <p className="max-w-[52ch] text-base leading-relaxed text-primary-foreground/85 md:text-lg">
-          Étudiant en informatique à Paris-Saclay, futur Master{" "}
+          Étudiant en Master{" "}
           <strong className="font-bold text-primary-foreground">
             IA&nbsp;&amp;&nbsp;Big&nbsp;Data
           </strong>{" "}
-          (ETNA). Je cherche une{" "}
+          (ETNA) et{" "}
           <strong className="font-bold text-primary-foreground">
-            alternance Data
+            alternant Data chez Polynom
           </strong>{" "}
-          — data engineering / data science — 2&nbsp;ans à partir de
-          septembre&nbsp;2026.
+          — data engineering / data science, dans la continuité de mon stage,
+          de septembre&nbsp;2026 à septembre&nbsp;2028.
         </p>
 
         <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-3.5">
