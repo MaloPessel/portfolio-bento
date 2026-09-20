@@ -49,11 +49,7 @@ export function Hero() {
         </p>
 
         <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-3.5">
-          <Button
-            asChild
-            variant="secondary"
-            className="h-11 rounded-full px-5 text-sm font-bold"
-          >
+          <Button asChild variant="secondary" size="cta">
             <a href="/cv.pdf" download="CV_Malo_Pessel.pdf">
               <Download data-icon="inline-start" />
               Télécharger le CV

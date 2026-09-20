@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 
+import { BrandTitle } from "@/components/brand-title"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
@@ -25,13 +26,7 @@ export function Tile({
     >
       <CardHeader>
         <CardTitle>
-          <h2 className="flex items-center gap-2.5 text-[1.05rem] font-extrabold tracking-tight">
-            <span
-              aria-hidden="true"
-              className="size-2.5 shrink-0 rounded-[3px] bg-brand"
-            />
-            {title}
-          </h2>
+          <BrandTitle className="text-[1.05rem]">{title}</BrandTitle>
         </CardTitle>
       </CardHeader>
       <CardContent className="flex-1">{children}</CardContent>

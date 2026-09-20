@@ -1,11 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { Tile } from "@/components/tile"
-
-const languages = [
-  { name: "Français", level: "Langue maternelle" },
-  { name: "Anglais", level: "B2" },
-  { name: "Espagnol", level: "Scolaire" },
-]
+import { languages } from "@/lib/languages-data"
 
 export function Languages() {
   return (
@@ -16,7 +11,7 @@ export function Languages() {
             key={language.name}
             className="flex items-center justify-between gap-3"
           >
-            <span className="text-[0.95rem] font-semibold">
+            <span className="text-body font-semibold">
               {language.name}
             </span>
             <Badge variant="accent" className="font-semibold">

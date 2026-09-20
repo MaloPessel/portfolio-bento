@@ -19,7 +19,7 @@ export function JourneyCard({
             key={step.role}
             className="relative pl-6 before:absolute before:top-[7px] before:left-0 before:size-2.5 before:rounded-full before:bg-brand after:absolute after:top-[22px] after:-bottom-3.5 after:left-1 after:w-0.5 after:bg-border last:after:hidden"
           >
-            <h3 className="text-[0.95rem] font-extrabold tracking-tight">
+            <h3 className="text-body font-extrabold tracking-tight">
               {step.role}
             </h3>
             <p className="mt-0.5 mb-1.5 font-mono text-xs text-muted-foreground">

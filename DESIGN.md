@@ -39,6 +39,7 @@ Stratégie : committed. Deux tuiles colorées en diagonale (héro `bg-primary` e
 - **JetBrains Mono Variable** (Fontsource) : uniquement dates du parcours et stacks techniques (`font-mono text-xs`).
 - H1 : `text-5xl md:text-7xl`, `tracking-[-0.025em]`, `leading-[0.98]`, `text-balance`.
 - Titres de tuiles : h2 dans `CardTitle`, `text-[1.05rem] font-extrabold` + carré ambre `size-2.5 rounded-[3px] bg-brand` (grammaire de marque — pas d'icônes de titres).
+- Corps de tuile : token `--text-body` (`0.95rem`, classe `text-body`) — texte courant des tuiles (à propos, parcours, langues, centres d'intérêt, tagline contact).
 
 ## Layout
 

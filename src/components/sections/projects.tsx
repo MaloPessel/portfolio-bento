@@ -1,42 +1,9 @@
 import { ArrowUpRight } from "lucide-react"
 
 import { GithubIcon } from "@/components/icons"
+import { IconLink } from "@/components/icon-link"
 import { Tile } from "@/components/tile"
-
-const projects = [
-  {
-    name: "Deep Ocean",
-    description:
-      "Jeu de stratégie en temps réel en Java : gestion de la concurrence, interfaces graphiques.",
-    stack: "Java · JavaFX · Threads",
-    href: "https://github.com/MaloPessel/deep-ocean",
-    linkLabel: "Code source",
-  },
-  {
-    name: "2048",
-    description:
-      "Implémentation complète du jeu : logique algorithmique, gestion des états, tests.",
-    stack: "C++ · STL · Tests unitaires",
-    href: "https://github.com/MaloPessel/Projet-2048",
-    linkLabel: "Code source",
-  },
-  {
-    name: "Pendu multijoueur",
-    description:
-      "Jeu du pendu en mode terminal, à deux joueurs, en programmation fonctionnelle.",
-    stack: "OCaml",
-    href: "https://github.com/MaloPessel/pendu",
-    linkLabel: "Code source",
-  },
-  {
-    name: "Sites web",
-    description:
-      "Plusieurs sites dynamiques, avec un accent sur l'expérience utilisateur et le responsive.",
-    stack: "HTML · CSS · JavaScript",
-    href: "https://github.com/MaloPessel",
-    linkLabel: "Voir le GitHub",
-  },
-]
+import { projects } from "@/lib/projects-data"
 
 export function Projects() {
   return (
@@ -54,19 +21,18 @@ export function Projects() {
             <p className="font-mono text-xs text-accent-foreground">
               {project.stack}
             </p>
-            <a
+            <IconLink
               href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-auto inline-flex items-center gap-1.5 pt-1.5 text-sm font-bold hover:text-accent-foreground hover:underline hover:underline-offset-3"
+              icon={GithubIcon}
+              external
+              className="mt-auto pt-1.5 font-bold hover:text-accent-foreground"
             >
-              <GithubIcon className="size-4" aria-hidden="true" />
               {project.linkLabel}
               <ArrowUpRight
                 className="size-3.5 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
                 aria-hidden="true"
               />
-            </a>
+            </IconLink>
           </article>
         ))}
       </div>

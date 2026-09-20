@@ -1,29 +1,12 @@
 import { Badge } from "@/components/ui/badge"
 import { Tile } from "@/components/tile"
-
-const groups = [
-  {
-    label: "Programmation",
-    strong: false,
-    items: ["Python", "Java", "C++", "JavaScript", "HTML/CSS", "OCaml"],
-  },
-  {
-    label: "Data & BDD",
-    strong: true,
-    items: ["SQL", "BigQuery", "Talend", "Pipelines de données"],
-  },
-  {
-    label: "Environnement",
-    strong: false,
-    items: ["Git", "Linux", "IntelliJ / VS Code"],
-  },
-]
+import { skillGroups } from "@/lib/skills-data"
 
 export function Skills() {
   return (
     <Tile className="a-skills" title="Compétences">
       <div className="flex flex-col gap-4.5">
-        {groups.map((group) => (
+        {skillGroups.map((group) => (
           <div key={group.label} className="flex flex-col gap-2">
             <h3 className="text-[0.82rem] font-bold text-muted-foreground">
               {group.label}

@@ -29,4 +29,4 @@ Hébergé sur Netlify. `netlify.toml` définit le build (`npm run build` → `di
 
 ## Contenu à maintenir
 
-Le texte des sections vit directement dans les composants de `src/components/sections/` (et `src/lib/journey-data.ts` pour le parcours). Penser à mettre à jour le poids du PDF affiché dans `hero.tsx` si le CV change.
+Le texte de prose (hero, à propos) vit directement dans les composants de `src/components/sections/`. Les données structurées (compétences, projets, parcours, langues, centres d'intérêt, liens de contact) sont centralisées dans `src/lib/*-data.ts` (ex. `journey-data.ts`, `projects-data.ts`). Penser à mettre à jour le poids du PDF affiché dans `hero.tsx` si le CV change.

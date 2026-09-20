@@ -1,10 +1,5 @@
 import { Tile } from "@/components/tile"
-
-const interests = [
-  { emoji: "🏉", label: "Rugby en club", detail: "7 ans de pratique" },
-  { emoji: "🎮", label: "Jeux vidéo" },
-  { emoji: "🎵", label: "Musique" },
-]
+import { interests } from "@/lib/interests-data"
 
 export function Interests() {
   return (
@@ -18,7 +13,7 @@ export function Interests() {
             >
               {interest.emoji}
             </span>
-            <span className="text-[0.95rem] font-semibold">
+            <span className="text-body font-semibold">
               {interest.label}
               {interest.detail && (
                 <em className="block text-xs font-normal text-muted-foreground not-italic">
