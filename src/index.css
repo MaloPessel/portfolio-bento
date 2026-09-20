@@ -10,7 +10,10 @@
     --font-sans: "Archivo Variable", system-ui, -apple-system, sans-serif;
     --font-heading: var(--font-sans);
     --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Code", monospace;
+
+    /* Taille de texte custom — voir DESIGN.md pour les rôles. */
     --text-body: 0.95rem;
+
     --color-ring: var(--ring);
     --color-input: var(--input);
     --color-border: var(--border);

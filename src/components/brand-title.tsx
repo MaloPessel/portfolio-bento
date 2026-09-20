@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils"
 /**
  * Grammaire de marque : carré ambre + titre. Partagé entre Tile (titres de
  * tuile) et les tuiles hors-Tile (héro, contact) qui ont leur propre taille.
+ * Aucune taille de texte par défaut : l'appelant doit toujours en fournir une
+ * via className (ex. text-[1.05rem], text-2xl).
  */
 export function BrandTitle({
   className,

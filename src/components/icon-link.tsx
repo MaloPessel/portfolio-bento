@@ -1,4 +1,4 @@
-import type { ElementType, ReactNode } from "react"
+import type { ComponentType, ReactNode, SVGProps } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -15,7 +15,7 @@ export function IconLink({
   children,
 }: {
   href: string
-  icon: ElementType
+  icon: ComponentType<SVGProps<SVGSVGElement>>
   external?: boolean
   className?: string
   children: ReactNode

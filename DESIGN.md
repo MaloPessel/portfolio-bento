@@ -30,6 +30,7 @@ Tokens custom (déclarés dans `@theme inline`, utilisables en classes Tailwind)
 | `--brand` | `bg-brand` | `oklch(0.68 0.145 75)` | Ambre vif : carrés de titres, puces timeline, ring au hover — jamais du texte sur blanc |
 | `--ink-blue` | `bg-ink-blue` | `oklch(0.35 0.075 260)` | Fond de la carte contact |
 | `--available` | `bg-available` | `oklch(0.84 0.19 145)` | Point vert de la pastille de disponibilité |
+| `--text-body` | `text-body` | `0.95rem` | Corps de tuile — texte courant (à propos, parcours, langues, centres d'intérêt, tagline contact) |
 
 Stratégie : committed. Deux tuiles colorées en diagonale (héro `bg-primary` en haut à gauche, contact `bg-ink-blue` en bas à droite) ; le reste blanc à bordures fines. Texte clair sur fonds saturés (`text-primary-foreground/85`, `text-white/75`), jamais de gris.
 

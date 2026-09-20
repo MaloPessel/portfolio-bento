@@ -1,4 +1,4 @@
-import type { ElementType } from "react"
+import type { ComponentType, SVGProps } from "react"
 import { Phone } from "lucide-react"
 
 import { GithubIcon, LinkedinIcon } from "@/components/icons"
@@ -6,7 +6,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons"
 export type ContactLink = {
   href: string
   label: string
-  icon: ElementType
+  icon: ComponentType<SVGProps<SVGSVGElement>>
   external: boolean
 }
 
