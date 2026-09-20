@@ -11,10 +11,13 @@ export function Hero() {
       <div className="flex h-full flex-col gap-5 px-(--card-spacing)">
         <div className="mb-auto flex flex-wrap items-start justify-between gap-4">
           <Avatar className="size-24 border-[3px] border-primary-foreground/35 md:size-28">
-            <AvatarImage
-              src="/photo.png"
-              alt="Photo de profil de Malo Pessel"
-            />
+            <picture className="block size-full">
+              <source srcSet="/photo.webp" type="image/webp" />
+              <AvatarImage
+                src="/photo.png"
+                alt="Photo de profil de Malo Pessel"
+              />
+            </picture>
             <AvatarFallback className="text-lg font-bold text-primary">
               MP
             </AvatarFallback>
