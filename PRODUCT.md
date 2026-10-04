@@ -39,7 +39,7 @@ Anti-références :
 
 - CV téléchargeable : `public/cv.pdf`.
 - Photo de profil réelle : `public/photo.png` (+ `public/photo.webp`).
-- Projets réels au code public et vérifiable : Deep Ocean, 2048, Pendu multijoueur, plusieurs sites web (tous liés à des dépôts GitHub réels sous github.com/MaloPessel).
+- Projets réels au code public et vérifiable : Diagonale du vide (React/TypeScript, en ligne), 50/50 (multijoueur temps réel Firebase), Yogatoroute (web app, en ligne), Deep Ocean (Java concurrent) — tous liés à des dépôts GitHub publics sous github.com/MaloPessel.
 - Expérience professionnelle réelle : stage Data Scientist/Engineer chez Polynom (janv.–juin 2026), suivi d'une alternance de 2 ans (sept. 2026 – sept. 2028) dans la continuité directe, plus un emploi antérieur (vendeur, Carrefour).
 - Formation réelle : Licence Informatique (Université Paris-Saclay), Master IA & Big Data (ETNA).
 - Langues confirmées : français natif, anglais B2, espagnol scolaire.

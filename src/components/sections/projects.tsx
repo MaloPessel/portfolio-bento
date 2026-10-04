@@ -1,9 +1,12 @@
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, Globe } from "lucide-react"
 
 import { GithubIcon } from "@/components/icons"
 import { IconLink } from "@/components/icon-link"
 import { Tile } from "@/components/tile"
 import { projects } from "@/lib/projects-data"
+
+const arrowClass =
+  "size-3.5 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
 
 export function Projects() {
   return (
@@ -21,18 +24,28 @@ export function Projects() {
             <p className="font-mono text-xs text-accent-foreground">
               {project.stack}
             </p>
-            <IconLink
-              href={project.href}
-              icon={GithubIcon}
-              external
-              className="mt-auto pt-1.5 font-bold hover:text-accent-foreground"
-            >
-              {project.linkLabel}
-              <ArrowUpRight
-                className="size-3.5 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
-                aria-hidden="true"
-              />
-            </IconLink>
+            <div className="mt-auto flex flex-wrap gap-x-4 gap-y-1 pt-1.5">
+              <IconLink
+                href={project.href}
+                icon={GithubIcon}
+                external
+                className="font-bold hover:text-accent-foreground"
+              >
+                Code source
+                <ArrowUpRight className={arrowClass} aria-hidden="true" />
+              </IconLink>
+              {project.liveHref && (
+                <IconLink
+                  href={project.liveHref}
+                  icon={Globe}
+                  external
+                  className="font-bold hover:text-accent-foreground"
+                >
+                  Voir en ligne
+                  <ArrowUpRight className={arrowClass} aria-hidden="true" />
+                </IconLink>
+              )}
+            </div>
           </article>
         ))}
       </div>
