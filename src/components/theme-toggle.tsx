@@ -11,11 +11,11 @@ export function ThemeToggle() {
   return (
     <Button
       variant="ghost"
-      size="icon-sm"
+      size="icon-lg"
       onClick={toggleTheme}
       aria-label={isDark ? "Passer en thème clair" : "Passer en thème sombre"}
       title={isDark ? "Thème clair" : "Thème sombre"}
-      className="rounded-full text-muted-foreground"
+      className="rounded-full text-muted-foreground focus-visible:ring-ring pointer-coarse:size-11"
     >
       {isDark ? <Sun /> : <Moon />}
     </Button>

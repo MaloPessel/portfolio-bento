@@ -16,9 +16,9 @@ export function Interests() {
             <span className="text-body font-semibold">
               {interest.label}
               {interest.detail && (
-                <em className="block text-xs font-normal text-muted-foreground not-italic">
+                <span className="block text-xs font-normal text-muted-foreground">
                   {interest.detail}
-                </em>
+                </span>
               )}
             </span>
           </li>

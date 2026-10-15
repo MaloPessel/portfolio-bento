@@ -83,7 +83,8 @@ Installés : `button`, `card`, `badge`, `avatar`, `separator`. Règles maison :
 
 - **`Tile`** (`src/components/tile.tsx`) : Card + CardHeader/CardTitle/CardContent, padding `[--card-spacing:--spacing(6)]`, titre + carré ambre. Toutes les tuiles standard passent par lui.
 - **Badge** : variante custom `accent` ajoutée (`bg-accent text-accent-foreground`) pour tags data et niveaux de langue ; `secondary` pour les tags neutres.
-- **Button** : CTAs en `variant="secondary"` + `rounded-full` sur les fonds colorés (héro, contact), toujours `asChild` avec un `<a>`.
+- **Button** : CTAs en `variant="secondary"` + `rounded-full` sur les fonds colorés (héro, contact), toujours `asChild` avec un `<a>`. La taille `cta` remplace le ring de focus (`--ring`, invisible sur ambre/encre bleue) par un contour `primary-foreground` 2px décollé de 2px.
+- **Focus** : liens texte (`IconLink`) en contour `currentColor` 2px ; au pointeur tactile (`pointer-coarse`), zones de tap portées à 44px sans décaler la mise en page.
 - **Avatar** : photo du héro, avec `AvatarFallback` "MP".
 - **Icônes** : lucide-react ; `data-icon="inline-start"` dans les Buttons, pas de classe de taille dans les composants. GitHub/LinkedIn (retirées de lucide v1) vivent dans `src/components/icons.tsx` en SVG inline.
 

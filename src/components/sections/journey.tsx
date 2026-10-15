@@ -25,7 +25,7 @@ export function JourneyCard({
             <p className="mt-0.5 mb-1.5 font-mono text-xs text-muted-foreground">
               {step.when}
             </p>
-            <p className="max-w-[58ch] text-muted-foreground">
+            <p className="max-w-[58ch] text-body text-muted-foreground">
               {step.description}
             </p>
           </li>

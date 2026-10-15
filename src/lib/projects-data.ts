@@ -22,6 +22,7 @@ export const projects: Project[] = [
       "Jeu de vote multijoueur en temps réel : salles partagées, joueurs synchronisés en direct, gestion des déconnexions et effets sonores.",
     stack: "JavaScript · Firebase Realtime DB · Auth · Web Audio",
     href: "https://github.com/MaloPessel/50_50_game",
+    liveHref: "https://50-50-game.netlify.app",
   },
   {
     name: "Yogatoroute",
