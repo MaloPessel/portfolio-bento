@@ -11,6 +11,18 @@
       content="Portfolio de Malo Pessel, étudiant en Master IA & Big Data (ETNA) et alternant Data chez Polynom — data engineering / data science."
     />
     <meta name="theme-color" content="#7a5410" />
+    <script>
+      // Pose le thème avant le premier rendu (pas de flash) : choix mémorisé,
+      // sinon préférence système. Logique miroir de src/lib/theme.ts.
+      try {
+        var stored = localStorage.getItem("theme")
+        var dark =
+          stored === "dark" ||
+          (stored !== "light" &&
+            matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.classList.toggle("dark", dark)
+      } catch (e) {}
+    </script>
     <title>Malo Pessel — Alternant Data chez Polynom</title>
 
     <meta property="og:type" content="website" />

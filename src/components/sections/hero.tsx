@@ -18,7 +18,7 @@ export function Hero() {
                 alt="Photo de profil de Malo Pessel"
               />
             </picture>
-            <AvatarFallback className="text-lg font-bold text-primary">
+            <AvatarFallback className="text-lg font-bold text-accent-foreground">
               MP
             </AvatarFallback>
           </Avatar>
@@ -47,8 +47,8 @@ export function Hero() {
           <strong className="font-bold text-primary-foreground">
             alternant Data chez Polynom
           </strong>{" "}
-          — data engineering / data science, dans la continuité de mon stage,
-          de septembre&nbsp;2026 à septembre&nbsp;2028.
+          — data engineering / data science, dans la continuité de mon stage, de
+          septembre&nbsp;2026 à septembre&nbsp;2028.
         </p>
 
         <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-3.5">

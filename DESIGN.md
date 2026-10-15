@@ -4,7 +4,12 @@ Système visuel du portfolio bento de Malo Pessel. Stack : React + Vite + Tailwi
 
 ## Theme
 
-Un seul thème, clair. Blanc pur en fond, la chaleur est portée par la couleur de marque (ambre profond), pas par la surface. Pas de dark mode (le bloc `.dark` a été retiré, aucun ThemeProvider).
+Deux thèmes, mêmes rôles de tokens :
+
+- **Clair** (référence) : blanc pur en fond, la chaleur est portée par la couleur de marque (ambre profond), pas par la surface.
+- **Sombre** : « papier carbone » — surfaces quasi noires mais chaudes (teinte 75, jamais `#000`), ambre éclairci pour le texte de marque, encre bleue éclaircie pour le focus. Pas de lueur, pas de néon, pas de mono généralisé (anti-référence « portfolio hacker »).
+
+Mécanique : classe `.dark` sur `<html>`, tokens redéfinis dans le bloc `.dark` de `src/index.css`. Un script inline dans `index.html` pose la classe avant le premier rendu (pas de flash). Par défaut on suit `prefers-color-scheme` en direct ; le bouton du footer (`ThemeToggle`, hook `useTheme` dans `src/lib/theme.ts`) mémorise un choix dans `localStorage["theme"]`, effacé si l'utilisateur revient au thème du système. Les transitions sont coupées pendant la bascule. Aucun composant ne doit utiliser de couleur en dur ni de variante `dark:` quand un token suffit.
 
 ## Colors (OKLCH)
 
@@ -22,6 +27,23 @@ Palette mappée sur les tokens sémantiques shadcn :
 | `--accent-foreground` | `oklch(0.46 0.1 65)` | Texte sur ambre teinté |
 | `--border` | `oklch(0.885 0.014 80)` | Bordures 1px (ring des cartes) |
 | `--ring` | `oklch(0.42 0.09 260)` | Focus ring (encre bleue) |
+
+Thème sombre (bloc `.dark`, contrastes vérifiés AA) :
+
+| Rôle shadcn | Valeur | Note |
+|---|---|---|
+| `--background` | `oklch(0.17 0.008 75)` | Carbone chaud |
+| `--card` / `--popover` | `oklch(0.205 0.009 75)` | Un cran au-dessus du fond |
+| `--foreground` | `oklch(0.94 0.012 85)` | 15:1 sur carte |
+| `--muted-foreground` | `oklch(0.73 0.016 80)` | 7.5:1 sur carte |
+| `--primary` | `oklch(0.44 0.095 65)` | Ambre du héro, à peine assourdi |
+| `--secondary` / `--muted` | `oklch(0.25 0.011 75)` | Tuiles projets, tags neutres, CTA sur fonds colorés |
+| `--accent` / `--accent-foreground` | `oklch(0.29 0.04 70)` / `oklch(0.83 0.11 78)` | Tags data, stacks (8:1) |
+| `--border` | `oklch(0.33 0.012 75)` | Ring des cartes |
+| `--ring` | `oklch(0.72 0.1 260)` | Focus (7:1 sur carte) |
+| `--brand` / `--ink-blue` | `oklch(0.72 0.145 75)` / `oklch(0.33 0.07 260)` | Carrés de titres / carte contact |
+
+Le texte de marque ambre sur surface neutre utilise `text-accent-foreground` (lisible dans les deux thèmes), jamais `text-primary`.
 
 Tokens custom (déclarés dans `@theme inline`, utilisables en classes Tailwind) :
 

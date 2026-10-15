@@ -7,6 +7,7 @@ import { education, experience } from "@/lib/journey-data"
 import { Languages } from "@/components/sections/languages"
 import { Projects } from "@/components/sections/projects"
 import { Skills } from "@/components/sections/skills"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function App() {
   return (
@@ -30,10 +31,11 @@ export function App() {
         <Interests />
         <Contact />
       </main>
-      <footer className="mx-auto mt-4.5 max-w-[1180px] px-1">
+      <footer className="mx-auto mt-4.5 flex max-w-[1180px] items-center justify-between gap-4 px-1">
         <p className="text-xs text-muted-foreground">
           © 2026 Malo Pessel — fait main avec React, Tailwind CSS & shadcn/ui.
         </p>
+        <ThemeToggle />
       </footer>
     </>
   )

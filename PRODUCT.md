@@ -24,7 +24,7 @@ Découverte via LinkedIn, GitHub ou un CV partagé ; lecture au bureau, sur écr
 
 ## Capabilities and Constraints
 
-SPA statique (Vite → `dist/`, déployée sur Netlify, aucun backend/API/CMS). Le contenu factuel (parcours, projets, compétences, langues) vit en dur dans le code — prose dans les composants de section, listes structurées dans `src/lib/*-data.ts` — toute mise à jour de contenu est un déploiement, pas une saisie éditoriale séparée. Un seul thème visuel (clair, pas de dark mode). Site entièrement en français, pas d'i18n. Pas de canal de contact intégré (formulaire) : le contact se fait par mail/téléphone/LinkedIn directement.
+SPA statique (Vite → `dist/`, déployée sur Netlify, aucun backend/API/CMS). Le contenu factuel (parcours, projets, compétences, langues) vit en dur dans le code — prose dans les composants de section, listes structurées dans `src/lib/*-data.ts` — toute mise à jour de contenu est un déploiement, pas une saisie éditoriale séparée. Deux thèmes (clair par défaut, sombre selon la préférence système ou le bouton du footer). Site entièrement en français, pas d'i18n. Pas de canal de contact intégré (formulaire) : le contact se fait par mail/téléphone/LinkedIn directement.
 
 ## Brand Commitments
 
