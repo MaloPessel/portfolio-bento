@@ -41,7 +41,7 @@ export function Hero() {
         <p className="max-w-[52ch] text-base leading-relaxed text-primary-foreground/85 md:text-lg">
           Étudiant à l’
           <strong className="font-bold text-primary-foreground">ETNA</strong>{" "}
-          (Bac+3&nbsp;→&nbsp;Bac+5, spécialisation{" "}
+          (Bac+3 à Bac+5, spécialisation{" "}
           <strong className="font-bold text-primary-foreground">
             IA&nbsp;&amp;&nbsp;Big&nbsp;Data
           </strong>
