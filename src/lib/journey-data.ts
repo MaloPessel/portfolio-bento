@@ -7,9 +7,15 @@ export type Step = {
 export const education: Step[] = [
   {
     role: "Master of Science — IA & Big Data",
-    when: "Sept. 2026 – sept. 2028 · ETNA, Ivry-sur-Seine",
+    when: "2027 – 2029 · ETNA, Ivry-sur-Seine",
     description:
       "Data engineering, Big Data, machine learning, pipelines de données, architectures distribuées. En alternance chez Polynom.",
+  },
+  {
+    role: "Bachelor — 3e année",
+    when: "Sept. 2026 – 2027 · ETNA, Ivry-sur-Seine",
+    description:
+      "Admission en 3e année pour intégrer le parcours IA & Big Data en alternance chez Polynom.",
   },
   {
     role: "Licence Informatique",
@@ -22,9 +28,9 @@ export const education: Step[] = [
 export const experience: Step[] = [
   {
     role: "Alternant Data Engineer / Data Scientist",
-    when: "Sept. 2026 – sept. 2028 · Polynom, Rueil-Malmaison",
+    when: "Depuis sept. 2026 · Polynom, Rueil-Malmaison",
     description:
-      "Alternance de 2 ans dans la continuité du stage, en parallèle du Master IA & Big Data : pipelines de données, qualité des données, BigQuery, Python, Talend.",
+      "Alternance dans la continuité de mon stage, en parallèle de mon cursus à l’ETNA : pipelines de données, qualité des données, BigQuery, Python, Talend.",
   },
   {
     role: "Stagiaire Data Scientist / Data Engineer",
@@ -36,6 +42,6 @@ export const experience: Step[] = [
     role: "Vendeur charcuterie / fromagerie",
     when: "Janv. 2024 – déc. 2025 · Carrefour, Les Ulis",
     description:
-      "Relation client, gestion des stocks, rigueur et respect des normes d'hygiène.",
+      "Relation client, gestion des stocks, rigueur et respect des normes d’hygiène.",
   },
 ]
